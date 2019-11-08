@@ -1,9 +1,11 @@
 /* eslint-disable */
 import '../../common/css/com.less';
 import './index.less';
-import {addCar} from './js/car'
 
-const viewToken = 'e5cb2c453ed2487d82a8fb98e2833155';
+import {addCar} from './js/car'
+import {addFire} from './js/fire'
+
+const viewToken = '785248476db34006956d901635425692';
 
 export const ready = new Promise(resolve => {
   const loaderConfig = new BimfaceSDKLoaderConfig();
@@ -13,7 +15,8 @@ export const ready = new Promise(resolve => {
   .then(initEvents)
 
 function initEvents () {
-  return addCar('car-' + +new Date(), new THREE.Vector3(-18000, 12000, 0), new THREE.Vector3(1.5, 1.5, 1.5), new THREE.Vector3(0, 0, 0))
+  addCar('car-' + +new Date(), new THREE.Vector3(-18000, 12000, 0), new THREE.Vector3(1.5, 1.5, 1.5), new THREE.Vector3(0, 0, 0))
+  addFire('fire-' + +new Date(), new THREE.Vector3(-24000, 0, 5000))
   // document.getElementById("btnLoadObj").addEventListener("click",  _ => {
   //   return addCar('car-' + +new Date(), new THREE.Vector3(-16000, 0, 0), new THREE.Vector3(2, 2, 2), new THREE.Vector3(0, 0, 0))
   // }, false)

@@ -1,0 +1,72 @@
+{
+  "Usage": "http://pm.glodon.com/wiki/display/PAAS/revit2md",
+  "Version": {
+    "Databag": "3.7",
+    "Sqlite": "1.0",
+    "Model": "1.0",
+    "Worker": "3.7",
+    "Drawing": "1.0"
+  },
+  "Source": {
+    "Server": "http://10.5.3.5/Packages/translate-rvt-dev",
+    "BuildId": "dev",
+    "Package": "Revit.zip"
+  },
+  "RenderType": "bimView",
+  "name": "worker.rvt2viz",
+  "depends": [
+    "7zip",
+    "fileInfo",
+    "md2viz",
+    "md2gltf",
+    "proto2db",
+    "rvt2md",
+    "minimap",
+    "regularize",
+    "dwg2mdv",
+    "dwg2pdf",
+    "gltf2ss",
+    "bim2md"
+  ],
+  "tasks": [
+    "7zip",
+    "rvtFileInfo",
+    "rvt2md",
+    "ConnectLinkIdTask",
+    "proto2db",
+    "elementClassifySingle",
+    "thumbnail",
+    "resizeImage96",
+    "levelmap",
+    "md2viz3",
+    "bmd2gltf",
+    "gltf2ss",
+    "dwg2mdv",
+    "dwg2pdf"
+  ],
+  "customConfig": {
+    "exportDrawing": "true",
+    "exportDwg": "true",
+    "originInput": "C:\\Job\\wd\\1590537462328768\\input\\8da84820c82a43e4b1f2e18ef3ea21f7.rvt",
+    "texture": false,
+    "viewName": "",
+    "displaylevel": "Fine",
+    "setLevelrule": false,
+    "exportBuildingIndex": false,
+    "integrateDrawings": false,
+    "modifyMode": false,
+    "exportDwgInstance": false,
+    "exportHiddenObjects": false,
+    "exportSystemType": false,
+    "exportAssemblyInstance": false,
+    "visilbiltyByVoxel": true,
+    "engine": "",
+    "integrateDrawingsFiles": "",
+    "dwgFileFromRevit": true,
+    "rvtIntegrateDrawings": false,
+    "loadOnDemand": false,
+    "lightingMap": false,
+    "exportPdf": false,
+    "fileVersion": "2014"
+  }
+}

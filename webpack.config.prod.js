@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");  
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const pageConfig = require('./page.config.js');
 
 class ChunksFromEntryPlugin {
@@ -117,6 +118,9 @@ let webpackConfig = {
           dry: false     //启用删除文件  
       }  
     ),
+    // new CopyPlugin([
+    //   { from: path.join(__dirname, './lib'), to: path.join(__dirname, "./dist" )}
+    // ]),
     new ChunksFromEntryPlugin(),
   ],
   optimization:{

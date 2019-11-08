@@ -3,6 +3,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const pageConfig = require('./page.config.js');
 
 let webpackConfig = {
@@ -69,6 +70,11 @@ let webpackConfig = {
           'css-loader',
           'less-loader'
         ],
+      },
+      {
+        test: /\.gz$/,
+        enforce: 'pre',
+        use: 'gzip-loader'
       }
     ]
   },
@@ -81,16 +87,21 @@ let webpackConfig = {
         verbose: true,    //开启在控制台输出信息
         dry: false     //启用删除文件
       }
-    )
+    ),
+    // new CopyPlugin([
+    //   { from: path.join(__dirname, './lib'), to: path.join(__dirname, "./dist") }
+    // ]),
   ],
   // 起本地服务
   devServer: {
-    contentBase: "./dist/",
+    contentBase: "./dist",
     historyApiFallback: true,
     inline: true,
     hot: true,
     host: '127.0.0.1',
-    before (_, server) {
+    clientLogLevel: 'error',
+    compress: true,
+    before (app, server) {
       server._watch(__dirname + '/src/pages')
     }
   }

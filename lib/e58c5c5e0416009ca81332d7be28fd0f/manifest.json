@@ -1,0 +1,43 @@
+{
+  "Metadata": {
+    "ID": "e58c5c5e0416009ca81332d7be28fd0f",
+    "Name": "Project Name",
+    "FileName": "8da84820c82a43e4b1f2e18ef3ea21f7.rvt",
+    "Timestamp": "\/Date(1555911697957)\/",
+    "DefaultView": "0deb867b-b60e-47d0-b1ab-e027509e4c41-0001f54f",
+    "DefaultLayout": "287a9739-05b5-4e64-954c-2939a3553ef0",
+    "Properties": null,
+    "Categories": null,
+    "Version": 1,
+    "ExportTexture": false,
+    "DisplayLevel": "Fine"
+  },
+  "Views": [],
+  "Layouts": [
+    {
+      "ID": "287a9739-05b5-4e64-954c-2939a3553ef0",
+      "Name": "Categories",
+      "Root": {
+        "ID": "ae3f6f6b-50ab-42c3-8ba1-67fbd0228612",
+        "Name": "Root",
+        "Folders": [
+          {
+            "ID": "34646b55-ac31-45ef-8089-39b60efc9ee6",
+            "Name": "ThreeD",
+            "Folders": [],
+            "Views": [
+              "0deb867b-b60e-47d0-b1ab-e027509e4c41-0001f54f",
+              "8b65f6d6-873c-4d92-8393-178b7e4bfcdb-00033d3e",
+              "944a7e02-7e25-4da3-9d47-3370231761c5-0003f5e0",
+              "944a7e02-7e25-4da3-9d47-3370231761c5-0003f613",
+              "944a7e02-7e25-4da3-9d47-3370231761c5-0003f6c1",
+              "944a7e02-7e25-4da3-9d47-3370231761c5-0003f6d7"
+            ]
+          }
+        ],
+        "Views": []
+      }
+    }
+  ],
+  "Maps": []
+}
