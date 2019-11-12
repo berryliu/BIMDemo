@@ -5,11 +5,13 @@ import './index.less';
 import {addCar} from './js/car'
 import {addFire} from './js/fire'
 
-const viewToken = '785248476db34006956d901635425692';
+const viewToken = 'ca7ee9cc63d94379859405953a3643f8';
 
 export const ready = new Promise(resolve => {
   const loaderConfig = new BimfaceSDKLoaderConfig();
-  loaderConfig.viewToken = viewToken;
+  loaderConfig.dataEnvType = BimfaceEnvOption.Local;
+  loaderConfig.sdkPath = '../../jssdk';
+  loaderConfig.path = '../../viewToken.json';
   BimfaceSDKLoader.load(loaderConfig, viewMetaData => resolve(viewMetaData), (err) => console.log(err));
 }).then(successCallback)
   .then(initEvents)
@@ -28,8 +30,9 @@ function successCallback (viewMetaData) {
   const webAppConfig = new Glodon.Bimface.Application.WebApplication3DConfig();
   webAppConfig.domElement = dom4Show;
   window.app = new Glodon.Bimface.Application.WebApplication3D(webAppConfig);
-  app.addView(viewToken);
+  // app.addView(viewToken);
   window.viewer3D = app.getViewer();
+  window.viewer3D.addModel(viewMetaData);
 
   return new Promise(resolve => {
     // 增加加载完成监听事件

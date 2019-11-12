@@ -88,9 +88,9 @@ let webpackConfig = {
         dry: false     //启用删除文件
       }
     ),
-    // new CopyPlugin([
-    //   { from: path.join(__dirname, './lib'), to: path.join(__dirname, "./dist") }
-    // ]),
+    new CopyPlugin([
+      { from: path.join(__dirname, './lib'), to: path.join(__dirname, "./dist") }
+    ]),
   ],
   // 起本地服务
   devServer: {
@@ -102,6 +102,12 @@ let webpackConfig = {
     clientLogLevel: 'error',
     compress: true,
     before (app, server) {
+      app.get('*', function(req, res, next) {
+        if (req.path.indexOf(".gz") > -1) {
+          res.setHeader("Content-Encoding", "gzip");
+        }
+        next()
+      })
       server._watch(__dirname + '/src/pages')
     }
   }
